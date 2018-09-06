@@ -1,0 +1,168 @@
+table.which-mesh {
+    border-left: 0;
+}
+
+.woocommerce table.which-mesh th, td {
+    background: transparent;  
+}
+
+table.shop_table th, td {
+    vertical-align: middle !important;
+}
+
+.which-mesh td select {
+    padding: 0 5px;
+}
+
+table.which-mesh tr th {
+  background: #03ba48;  
+  color: #fff;
+  border: 0;
+}
+
+table.which-mesh td input {
+    padding-left: 5px !important;
+}
+
+.aira-filter td {
+    padding: 5px;
+}
+
+table.which-mesh tr:nth-child(odd) {
+    background: #e0e0e0;
+}
+
+table.which-mesh tr:nth-child(even) {
+    background: #fff;
+}
+
+table.which-mesh td {
+    background: transparent;
+    border: 0;
+    font-size: 12px;
+}
+
+table.shop_table tr:nth-child(odd) {
+    background: #e0e0e0 !important;
+}
+
+table td .product-buttons a {
+    font-size: 9px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a.added_to_cart.wc-forward {
+    color: black;
+    margin: 15px;
+}
+
+span.info {
+    border: 1px solid;
+    border-radius: 100%;
+    padding: 0px 5px;
+    font-weight: 900;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.aira-ajax-loading {
+    background: url('../img/ajax-loader.gif') no-repeat center;
+    height: 100px;
+}
+
+.aira-pagination {
+    float: right;
+    margin: 0 !important;
+}
+
+.aira-pagination li>a {
+    color:#03ba48 !important;
+}
+
+.aira-pagination li>a:hover,
+.aira-pagination > .active > a  {
+    background: #03ba48 !important;
+    color: #ffffff !important;
+    border: 1px solid #ddd !important;
+}
+
+/* The Modal (background) */
+.aira-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.aira-modal-content {
+    background-color: #ffffff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 15px solid #ddd;
+    border-radius: 25px;
+    width: 35%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.aira-close {
+    float: right;
+    font-size: 35px;
+    font-weight: 900;
+    line-height: 1;
+    color: #dd5e11;
+    margin-top: -45px;
+    margin-right: -45px;
+    background: #fcf7f4;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    padding: 0px 7px;
+}
+
+.aira-close:hover,
+.aira-close:focus {
+    background: #b5b5b5;    
+    cursor: pointer;
+}
+
+.text-content {
+    width: 70%;
+    display: inline-block;
+    padding: 10px;
+}
+
+.img-content {
+    width: 25%;
+    display: inline-block;
+}
+
+.aira-modal-content.application,
+.aira-modal-content.material,
+.aira-modal-content.finish,
+.aira-modal-content.hole-size,
+.aira-modal-content.wire-diameter,
+.aira-modal-content.gauge,
+.aira-modal-content.height,
+.aira-modal-content.length {
+    display: none;
+}
+
+/* The Modal END */
+
+
+/* AJAX LOADER */
+.loader {
+    background: url(/wp-content/plugins/aira-table-filter/assets/img/ajax-loader.gif) no-repeat center;
+    height: 100%;
+    background-color: rgba(255,255,255,0.7);
+    position: absolute;
+    width: 100%;
+}
+/* AJAX LOADER END */
