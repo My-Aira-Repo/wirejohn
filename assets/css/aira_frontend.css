@@ -18,6 +18,8 @@ table.which-mesh tr th {
   background: #03ba48;  
   color: #fff;
   border: 0;
+  text-align: center;
+  vertical-align: bottom;
 }
 
 table.which-mesh td input {
@@ -39,7 +41,8 @@ table.which-mesh tr:nth-child(even) {
 table.which-mesh td {
     background: transparent;
     border: 0;
-    font-size: 12px;
+    font-size: 14px;
+    text-align: center;
 }
 
 table.shop_table tr:nth-child(odd) {
@@ -47,9 +50,14 @@ table.shop_table tr:nth-child(odd) {
 }
 
 table td .product-buttons a {
-    font-size: 9px;
+    font-size: 14px;
     color: #ffffff;
+    background: #ff8400;
     text-decoration: none;
+}
+
+table td .product-buttons a:hover {
+    background: #5aa1e3;
 }
 
 a.added_to_cart.wc-forward {
@@ -64,6 +72,17 @@ span.info {
     font-weight: 900;
     font-size: 10px;
     cursor: pointer;
+}
+
+table td a img.spyglass {
+    width: 20px;
+    height: auto;
+    display: inline-block;
+}
+
+table b {
+    display: block;
+    white-space: nowrap;
 }
 
 .aira-ajax-loading {

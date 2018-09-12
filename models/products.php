@@ -41,7 +41,7 @@ class ProductModel {
 			}
         }
 
-        $attr_slugs = ["industry", "application", "material", "finish", "hole-size-aperture", "wire-diameter", "wire-diameter-gauge", "height", "length"];
+        $attr_slugs = ["industry", "application", "material", "finish", "height", "length"];
 
          
         if (isset($args['filters'])) {
@@ -71,7 +71,7 @@ class ProductModel {
     }
 
     public function get_filters() {
-        $attr_slugs = ["industry", "application", "material", "finish", "hole-size-aperture", "wire-diameter", "wire-diameter-gauge", "height", "length"];
+        $attr_slugs = [ "material", "finish", "height", "length"];
 
         foreach ($attr_slugs as  $attr_slug) {
             $filters_values[$attr_slug] = $this->get_filter_options('pa_' . $attr_slug);

@@ -6,13 +6,13 @@ class AiraController {
     
     public static function getProductsAjax() {
 
-        $attr_slugs = ["industry", "application","material", "finish", "hole-size-aperture", "wire-diameter", "wire-diameter-gauge", "height", "length"];
+        $attr_slugs = ["industry", "application","material", "finish", "height", "length"];
         
         if (wp_doing_ajax()) {
             $query_args = $_POST;
 
         } else {
-            $query_args['pagination'] = ['posts_per_page' => 2, 'page' => 1];
+            $query_args['pagination'] = ['posts_per_page' => -1, 'page' => 1];
         }
 
         $productModel = new ProductModel();

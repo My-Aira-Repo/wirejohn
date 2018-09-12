@@ -4,6 +4,10 @@
 <td>
     
 </td>
+<td>
+    
+</td>
+
 <?php foreach ($filters as $attr_slug => $terms):?>
 <td><select class="attr_filters" data-attr_slug="<?= $attr_slug ?>" style="width:100%">
     <option selected  value="">Filter</option>
@@ -12,5 +16,7 @@
     <?php endforeach ?>
 </select></td>
 <?php endforeach ?>
+<td></td>
+<td></td>
 <td></td>
 <td></td>

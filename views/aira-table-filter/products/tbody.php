@@ -5,13 +5,14 @@
     $pid = $product->get_id();
     $attributes = $product->get_attributes(); 
     $price = $product->get_price();
+    $url = $product->get_permalink() ;
         ?>  
             <!-- <td>
                 <?php //echo $post->post_title ?>
             </td> -->
-            <td>
-                <img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" class="img-responsive" alt=""/>
-            </td>
+            <!-- <td>
+                <img src="<?php //echo get_the_post_thumbnail_url($post->ID); ?>" class="img-responsive" alt=""/>
+            </td> -->
     <?php foreach ($attr_slugs as $slug): ?> 
         <?php if (isset($attributes['pa_' . $slug])): ?>
             <td>
@@ -39,6 +40,9 @@
                     <div class="quickview-button">
                     </div>		
                 </div>
+            </td>
+            <td>
+                    <a href="<?= $url ?>" target="_blank"><img alt='🔍' class="spyglass" src='https://s.w.org/images/core/emoji/11/svg/1f50d.svg'></a>
             </td>
     </tr>
 <?php endforeach ?>

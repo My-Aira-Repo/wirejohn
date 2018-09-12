@@ -6,19 +6,19 @@
     <thead>
         <tr>
             <!-- <th style="width: 175px;"><b>Application Type </b> <span class="info application">i</span> </th> -->
-            <th><b>Image</b></th>
             <th><b>Industry</b></th>
-            <th style="width: 115px;"><b>Application </b><span class="info application">i</span></th>
-            <th><b>Material </b><span class="info material">i</span></th>
-            <th><b>Finish </b><span class="info finish">i</span></th>
-            <th><b>Hole Size </b><span class="info hole-size">i</span></th>
+            <th style="width: 115px;"><span class="info application">i</span><b>Application </b></th>
+            <th><span class="info material">i</span><b>Material </b></th>
+            <th><b>Finish </b></th>
+            <!-- <th><b>Hole Size </b><span class="info hole-size">i</span></th>
             <th><b>Diameter </b><span class="info wire-diameter">i</span></th>
-            <th style="width: 90px;"><b>Gauge </b><span class="info gauge">i</span></th>
-            <th><b>Height </b><span class="info height">i</span></th>
-            <th><b>Length </b><span class="info length">i</span></th>
+            <th style="width: 90px;"><b>Gauge </b><span class="info gauge">i</span></th> -->
+            <th><span class="info height">i</span><b>Height </b></th>
+            <th><span class="info length">i</span><b>Length </b></th>
             <th style="width: 75px;"><b>Quantity</b></th>
-            <th style="width: 60px;"><b>Price</b></th>
-            <th style="width: 110px;"><b>Add to Cart</b></th>
+            <th style="width: 150px;"><b>Price</b></th>
+            <th style="width: 150px;"><b>Add to Cart</b></th>
+            <th><b>View</b></th>
         </tr>
     
          <tr id="aira_ajax_filters" class="aira-filter">
@@ -36,9 +36,9 @@
     </tfoot>
     </table>
 
-    <div id="aira_ajax_pagination">
-    <?php echo AiraTableView::load('aira-table-filter.products.pagination',  compact('product_ids', 'filters', 'query_args')); ?>
-    </div>
+    <!-- <div id="aira_ajax_pagination">
+    <?php //echo AiraTableView::load('aira-table-filter.products.pagination',  compact('product_ids', 'filters', 'query_args')); ?>
+    </div> -->
 
     <div id="airaModal" class="aira-modal">
     
