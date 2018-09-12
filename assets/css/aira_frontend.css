@@ -18,6 +18,7 @@ table.which-mesh tr th {
   background: #03ba48;  
   color: #fff;
   border: 0;
+  white-space: nowrap;
   text-align: center;
   vertical-align: bottom;
 }
@@ -185,3 +186,32 @@ table b {
     width: 100%;
 }
 /* AJAX LOADER END */
+
+/***************************************
+**               MOBIL
+***************************************/
+
+@media only screen and (max-width: 600px) {
+
+    table.which-mesh {
+        display: block;
+        overflow: hidden;
+        overflow-x: scroll; 
+    }
+    
+    table td .product-buttons a,
+    table.which-mesh tr th {
+        white-space: nowrap;
+    }
+
+    .aira-modal-content {
+        width: 90%;
+        margin-top: 20%;
+    }
+
+}
+
+
+/***************************************
+**             MOBIL END
+***************************************/

@@ -1,7 +1,6 @@
 <?php
 ?>
 
-
     <table class="which-mesh"> 
     <thead>
         <tr>
