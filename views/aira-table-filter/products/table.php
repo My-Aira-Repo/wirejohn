@@ -5,19 +5,19 @@
     <thead>
         <tr>
             <!-- <th style="width: 175px;"><b>Application Type </b> <span class="info application">i</span> </th> -->
-            <th><b>Industry</b></th>
-            <th style="width: 115px;"><span class="info application">i</span><b>Application </b></th>
-            <th><span class="info material">i</span><b>Material </b></th>
-            <th><b>Finish </b></th>
+            <th style="width: 220px;"><span class="info application">i</span><b>Application </b></th>
+            <th style="width: 115px;"><span class="info industry">i</span><b>Industry</b></th>
+            <th style="width: 115px;"><span class="info material">i</span><b>Material </b></th>
+            <th style="width: 115px;"><span class="info finish">i</span><b>Finish </b></th>
             <!-- <th><b>Hole Size </b><span class="info hole-size">i</span></th>
             <th><b>Diameter </b><span class="info wire-diameter">i</span></th>
             <th style="width: 90px;"><b>Gauge </b><span class="info gauge">i</span></th> -->
-            <th><span class="info height">i</span><b>Height </b></th>
-            <th><span class="info length">i</span><b>Length </b></th>
-            <th style="width: 75px;"><b>Quantity</b></th>
-            <th style="width: 150px;"><b>Price</b></th>
-            <th style="width: 150px;"><b>Add to Cart</b></th>
-            <th><b>View</b></th>
+            <th style="width: 115px;"><span class="info height">i</span><b>Height </b></th>
+            <th style="width: 115px;"><span class="info length">i</span><b>Length </b></th>
+            <th style="width: 65px;"><b>Quantity</b></th>
+            <th style="width: 100px;"><b>Price</b></th>
+            <th style="width: 155px;"><b>Add to Cart</b></th>
+            <th style="width: 60px;"><b>View</b></th>
         </tr>
     
          <tr id="aira_ajax_filters" class="aira-filter">
@@ -55,12 +55,39 @@
 
         </div>
 
+        <div class="aira-modal-content industry">
+            <span class="aira-close">&times;</span>
+
+            <div class="text-content">
+                <h2>Industry Type</h2>
+                <p>To quickly find the mesh that you need click on the type of job that you need the mesh to do.  Under the ‘Application Type’ column you will find the common uses.</p>
+            </div>
+            <div class="img-content">
+                <img src="/wp-content/themes/emallshop/images/product-listing-placeholder.jpg" alt="placeholder">
+            </div>
+
+        </div>
+
         <!-- Modal content -->
         <div class="aira-modal-content material">
             <span class="aira-close">&times;</span>
 
             <div class="text-content">
                 <h2>Material</h2>
+                <p>stainless steel, etc</p>
+            </div>
+            <div class="img-content">
+                <img src="/wp-content/themes/emallshop/images/product-listing-placeholder.jpg" alt="placeholder">
+            </div>
+
+        </div>
+
+        <!-- Modal content -->
+        <div class="aira-modal-content finish">
+            <span class="aira-close">&times;</span>
+
+            <div class="text-content">
+                <h2>Finish</h2>
                 <p>stainless steel, etc</p>
             </div>
             <div class="img-content">

@@ -1,5 +1,6 @@
 table.which-mesh {
-    border-left: 0;
+    border-left: 1px solid #eee;
+    display: block;
 }
 
 .woocommerce table.which-mesh th, td {
@@ -17,10 +18,11 @@ table.shop_table th, td {
 table.which-mesh tr th {
   background: #03ba48;  
   color: #fff;
-  border: 0;
   white-space: nowrap;
   text-align: center;
   vertical-align: bottom;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
 }
 
 table.which-mesh td input {
@@ -44,6 +46,8 @@ table.which-mesh td {
     border: 0;
     font-size: 14px;
     text-align: center;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
 }
 
 table.shop_table tr:nth-child(odd) {
@@ -73,6 +77,11 @@ span.info {
     font-weight: 900;
     font-size: 10px;
     cursor: pointer;
+}
+
+span.info:hover {
+    color: #ff8400;
+    border-color: #ff8400;
 }
 
 table td a img.spyglass {

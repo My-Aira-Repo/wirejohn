@@ -9,10 +9,11 @@ jQuery(document).ready(function () {
     //   }
     // };
 
-    var info_types = ['application', 'material', 'hole-size', 'wire-diameter', 'gauge', 'height', 'length'];
+    var info_types = ['application', 'industry', 'material', 'finish', 'hole-size', 'wire-diameter', 'gauge', 'height', 'length'];
    
 
     function modal_handel(info) {
+      
       $(".info." + info).on('click', function () {
         $('#airaModal').show();
         $(".aira-modal-content." + info).show();
@@ -22,22 +23,26 @@ jQuery(document).ready(function () {
         $('#airaModal').hide();
         $(".aira-modal-content." + info).hide();
       });
+
+      $(document).keyup(function(e) {
+          if (e.keyCode == 27) { // escape key maps to keycode `27`
+          $('#airaModal').hide();
+          $(".aira-modal-content." + info).hide(); // <close modal>
+        }
+      });
+
     }
-    
+
     $(window).click(function(event) {
-      if (event.target == '#airaModal') {        
+      if (event.target.id == 'airaModal') {        
         $('#airaModal').hide();
       }
     });
-
-    info_types.forEach(function(element, index) {
-      modal_handel(info_types[index]);
-    });
-  
-  $("tbody").on('click', function(){
-    // console.log('adja')
     
-  });
+    // create modals
+    info_types.forEach(function(index, element) {
+      modal_handel(info_types[element]);
+    });
 
   $('#aira_ajax_products input').on('input', function(params) {
     var that = $(this);
@@ -45,27 +50,27 @@ jQuery(document).ready(function () {
     that.closest("tr").find('.ajax_add_to_cart').attr('data-quantity', qty);
   });
 
-  $("#aira_ajax_pagination").on("click", ".aira-pagination a", function() {
-    var post_data = prepare_post_data(this);
-    $("#loader").addClass("loader");
-    my_ajax_post(post_data, true, function(result) {
-      $("#aira_ajax_products").html(result.table_body_view);
-      $("#aira_ajax_pagination").html(result.pagination_view);
-      $("#loader").removeClass("loader");
-    });
-    return false;
-  });
+  // $("#aira_ajax_pagination").on("click", ".aira-pagination a", function() {
+  //   var post_data = prepare_post_data(this);
+  //   $("#loader").addClass("loader");
+  //   my_ajax_post(post_data, true, function(result) {
+  //     $("#aira_ajax_products").html(result.table_body_view);
+  //     // $("#aira_ajax_pagination").html(result.pagination_view);
+  //     $("#loader").removeClass("loader");
+  //   });
+  //   return false;
+  // });
 
   $('select.attr_filters').on('change', function () {
 
     var post_data = prepare_post_data(this);
-    post_data.pagination.page = 1;
+    // post_data.pagination.page = 1;
     $("#loader").addClass("loader");
     my_ajax_post(post_data, true, function(result) {
       console.log('SUCCESS');
       $("#aira_ajax_filters").html(result.filters_view);
       $("#aira_ajax_products").html(result.table_body_view);
-      $("#aira_ajax_pagination").html(result.pagination_view);
+      // $("#aira_ajax_pagination").html(result.pagination_view);
       $("#loader").removeClass("loader");
     });
     return false;
@@ -74,14 +79,15 @@ jQuery(document).ready(function () {
   function prepare_post_data(that) {
     
     var post_data = {
-      pagination: {
-          posts_per_page: $("input[name=posts_per_page]").val(),
-          page: $(that).data("current_page")
-      },
+      // pagination: {
+      //     // posts_per_page: $("input[name=posts_per_page]").val(),
+      //     // page: $(that).data("current_page")
+      //     posts_per_page: -1,
+      //     page: 1
+      // },
       filters: get_filter_selection(),
       action: "get_products"
-    };
-  
+    };    
     return post_data;
   }
 
@@ -91,7 +97,6 @@ jQuery(document).ready(function () {
     $('select.attr_filters').each(function(){
       filters[$(this).attr("data-attr_slug")] = $(this).val();
     });
-    
     return filters;
   }
 

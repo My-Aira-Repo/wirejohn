@@ -6,7 +6,7 @@ class AiraController {
     
     public static function getProductsAjax() {
 
-        $attr_slugs = ["industry", "application","material", "finish", "height", "length"];
+        $attr_slugs = [ "application", "industry","material", "finish", "height", "length"];
         
         if (wp_doing_ajax()) {
             $query_args = $_POST;
@@ -22,7 +22,7 @@ class AiraController {
 
         if (wp_doing_ajax()) {
             $table_body_view = AiraTableView::load('aira-table-filter.products.tbody', compact('product_ids', 'filters', 'query_args', 'attr_slugs'));
-            $pagination_view = AiraTableView::load('aira-table-filter.products.pagination', compact('product_ids', 'filters', 'query_args', 'attr_slugs'));
+            // $pagination_view = AiraTableView::load('aira-table-filter.products.pagination', compact('product_ids', 'filters', 'query_args', 'attr_slugs'));
             echo json_encode(compact('table_body_view', 'pagination_view'));
     		wp_die();
         } else {

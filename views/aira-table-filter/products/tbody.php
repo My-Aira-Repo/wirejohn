@@ -6,7 +6,10 @@
     $attributes = $product->get_attributes(); 
     $price = $product->get_price();
     $url = $product->get_permalink() ;
-        ?>  
+        ?>
+    <pre>
+    <?= $product ?>
+    </pre> 
             <!-- <td>
                 <?php //echo $post->post_title ?>
             </td> -->
@@ -46,3 +49,4 @@
             </td>
     </tr>
 <?php endforeach ?>
+

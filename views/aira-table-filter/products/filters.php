@@ -4,9 +4,6 @@
 <td>
     
 </td>
-<td>
-    
-</td>
 
 <?php foreach ($filters as $attr_slug => $terms):?>
 <td><select class="attr_filters" data-attr_slug="<?= $attr_slug ?>" style="width:100%">
