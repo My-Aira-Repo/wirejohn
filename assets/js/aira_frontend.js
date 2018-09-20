@@ -11,9 +11,9 @@ jQuery(document).ready(function () {
 
     var info_types = ['application', 'industry', 'material', 'finish', 'hole-size', 'wire-diameter', 'gauge', 'height', 'length'];
    
-
     function modal_handel(info) {
-      
+      $(".aira-modal-content." + info).hide();
+
       $(".info." + info).on('click', function () {
         $('#airaModal').show();
         $(".aira-modal-content." + info).show();
@@ -36,6 +36,7 @@ jQuery(document).ready(function () {
     $(window).click(function(event) {
       if (event.target.id == 'airaModal') {        
         $('#airaModal').hide();
+        $(".aira-modal-content." + info).hide(); // <close modal>
       }
     });
     
@@ -99,7 +100,6 @@ jQuery(document).ready(function () {
     });
     return filters;
   }
-
 
   function my_ajax_post(post_data, json, success, sync) {
 

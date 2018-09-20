@@ -12,8 +12,7 @@ class ProductModel {
     public function get_product_ids($args = []) {
 
         $query_args = $this->prepare_query_args($args);
-        $query_args['fields'] = 'ids';
-        // echo "<pre>", var_dump($query_args); "</pre>";
+        $query_args['fields'] = 'ids';        
         return get_posts($query_args);
     }
 
@@ -35,7 +34,9 @@ class ProductModel {
             'tax_query' => array(
                 array(
                     'taxonomy' => 'pa_mash-table',
-                ),
+                    'field' => 'term_id',
+                    'terms' => '521'
+                )
             )
         );
 
@@ -48,7 +49,7 @@ class ProductModel {
 		// 	}
         // }
 
-        $attr_slugs = [ "industry", "material", "finish", "height", "length"];
+        $attr_slugs = [ "industry", "material", "finish", "height", "length" ];
 
          
         if (isset($args['filters'])) {
@@ -62,7 +63,7 @@ class ProductModel {
                     $filter_args[] = 
                         array(
                             'taxonomy' => 'pa_' . $attr_slug,
-                            'field'    => 'term_ID',
+                            'field'    => 'term_id',
                             'terms'    => array( $args['filters'][$attr_slug] ),
                         );
                 }
@@ -73,7 +74,7 @@ class ProductModel {
                 $query_args['tax_query'] = $filter_args;
             }
         }
-        // echo "<pre>", var_dump($query_args), "</pre>";
+        // var_dump($query_args);
         return $query_args;
     }
 
@@ -95,6 +96,7 @@ class ProductModel {
             'taxonomy' => $tax_name,
             'orderby' => 'name',
             'order' => 'ASC',
+            'hide_empty' => '0',
         ];
 
         $terms = get_terms($args);

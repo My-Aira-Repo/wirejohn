@@ -1,15 +1,12 @@
 <tr>
     <?php foreach ($product_ids as $id):
-    $post    = get_post( $id );
-    $product = get_product( $id );
-    $pid = $product->get_id();
-    $attributes = $product->get_attributes(); 
-    $price = $product->get_price();
-    $url = $product->get_permalink() ;
-        ?>
-    <pre>
-    <?= $product ?>
-    </pre> 
+        $post    = get_post( $id );
+        $product = get_product( $id );
+        $pid = $product->get_id();
+        $attributes = $product->get_attributes(); 
+        $price = $product->get_price();
+        $url = $product->get_permalink();
+    ?>
             <!-- <td>
                 <?php //echo $post->post_title ?>
             </td> -->
@@ -45,7 +42,7 @@
                 </div>
             </td>
             <td>
-                    <a href="<?= $url ?>" target="_blank"><img alt='🔍' class="spyglass" src='https://s.w.org/images/core/emoji/11/svg/1f50d.svg'></a>
+                <a href="<?= $url ?>" target="_blank"><img alt='🔍' class="spyglass" src='https://s.w.org/images/core/emoji/11/svg/1f50d.svg'></a>
             </td>
     </tr>
 <?php endforeach ?>
