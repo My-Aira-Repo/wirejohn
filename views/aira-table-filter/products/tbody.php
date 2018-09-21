@@ -7,16 +7,18 @@
         $price = $product->get_price();
         $url = $product->get_permalink();
     ?>
-            <!-- <td>
-                <?php //echo $post->post_title ?>
-            </td> -->
-            <!-- <td>
-                <img src="<?php //echo get_the_post_thumbnail_url($post->ID); ?>" class="img-responsive" alt=""/>
-            </td> -->
     <?php foreach ($attr_slugs as $slug): ?> 
         <?php if (isset($attributes['pa_' . $slug])): ?>
             <td>
-                <?php $pa = $attributes['pa_' . $slug] ?>
+                <?php 
+                    $pa = $attributes['pa_' . $slug];
+                    // $attr_count = count($pa->get_terms()); 
+                    // for ($i = 1; $i <= $attr_count; $i++) {
+                    //     echo $i;
+                    //     echo ($pa->get_terms()[0]->name);
+                    // }
+                ?>
+                <?php echo $attr_count ?>
                 <?php echo($pa->get_terms()[0]->name); ?>
             </td>
         <?php else: ?>

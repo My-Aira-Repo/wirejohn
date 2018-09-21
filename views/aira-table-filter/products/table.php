@@ -4,7 +4,6 @@
     <table class="which-mesh"> 
     <thead>
         <tr>
-            <!-- <th style="width: 175px;"><b>Application Type </b> <span class="info application">i</span> </th> -->
             <th style="width: 220px;"><span class="info application">i</span><b>Application </b></th>
             <th style="width: 115px;"><span class="info industry">i</span><b>Industry</b></th>
             <th style="width: 115px;"><span class="info material">i</span><b>Material </b></th>

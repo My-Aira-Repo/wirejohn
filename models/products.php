@@ -34,8 +34,8 @@ class ProductModel {
             'tax_query' => array(
                 array(
                     'taxonomy' => 'pa_mash-table',
-                    'field' => 'term_id',
-                    'terms' => '521'
+                    'field' => 'slug',
+                    'terms' => 'Yes'
                 )
             )
         );
@@ -60,12 +60,19 @@ class ProductModel {
             foreach ($attr_slugs as $attr_slug) {
                 if ($args['filters'][$attr_slug] !== "") {
                     // var_dump('valtozott', 'pa_' . $attr_slug, $args['filters'][$attr_slug]);
-                    $filter_args[] = 
+                    $filter_args[] = array(
+                        'relation' => 'AND',
                         array(
                             'taxonomy' => 'pa_' . $attr_slug,
                             'field'    => 'term_id',
                             'terms'    => array( $args['filters'][$attr_slug] ),
-                        );
+                        ),
+                        array(
+                            'taxonomy' => 'pa_mash-table',
+                            'field' => 'slug',
+                            'terms' => 'Yes'
+                        ),
+                    );
                 }
             }
 
