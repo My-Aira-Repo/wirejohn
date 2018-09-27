@@ -119,7 +119,7 @@ jQuery(document).ready(function () {
 
   function sortTable(table, order) {
 	
-	console.log(order, 'ez');
+	// console.log(order, 'ez');
     if (order == "") {return}; // not set
     
     var asc = order === "asc",
