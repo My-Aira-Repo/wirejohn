@@ -4,7 +4,13 @@
     <table class="which-mesh"> 
     <thead>
         <tr>
-            <th style="width: 220px;"><span class="info application">i</span><b>Application </b></th>
+            <th style="width: 220px;">
+                <span class="info application">i</span>
+                <span class="az">
+                    <i class="fa fa-sort" aria-hidden="true"></i>
+                </span>
+                <b>Application </b>
+            </th>
             <th style="width: 115px;"><span class="info industry">i</span><b>Industry</b></th>
             <th style="width: 115px;"><span class="info material">i</span><b>Material </b></th>
             <th style="width: 115px;"><span class="info finish">i</span><b>Finish </b></th>

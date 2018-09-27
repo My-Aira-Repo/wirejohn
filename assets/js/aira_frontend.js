@@ -2,13 +2,6 @@
 jQuery(document).ready(function () {
     // console.log("ready2!");
 
-    // // When the user clicks anywhere outside of the modal, close it
-    // window.onclick = function (event) {
-    //   if (event.target == modal) {
-    //     modal.style.display = "none";
-    //   }
-    // };
-
     var info_types = ['application', 'industry', 'material', 'finish', 'hole-size', 'wire-diameter', 'gauge', 'height', 'length'];
    
     function modal_handel(info) {
@@ -72,6 +65,8 @@ jQuery(document).ready(function () {
       $("#aira_ajax_filters").html(result.filters_view);
       $("#aira_ajax_products").html(result.table_body_view);
       // $("#aira_ajax_pagination").html(result.pagination_view);
+
+      sortTable($(".which-mesh"), sortOrder);
       $("#loader").removeClass("loader");
     });
     return false;
@@ -121,4 +116,49 @@ jQuery(document).ready(function () {
     }    
     $.ajax(settings);
   }    
+
+  function sortTable(table, order) {
+	
+	console.log(order, 'ez');
+    if (order == "") {return}; // not set
+    
+    var asc = order === "asc",
+      tbody = table.find("#aira_ajax_products");
+
+    tbody.find('tr').sort(function (a, b) {
+      if (asc) {
+        return $('td:first', a).text().localeCompare($('td:first', b).text());
+      } else {
+        return $('td:first', b).text().localeCompare($('td:first', a).text());
+      }
+    }).appendTo(tbody);
+  }
+
+  var sortOrder = "";
+  
+  $(".az").on("click", function() {
+	
+	var icon = $(this).children();
+	  
+	switch (sortOrder) {
+      case "asc":
+		sortOrder = "desc";
+		icon.removeClass("fa-sort-asc");
+		icon.addClass("fa-sort-desc");
+        break;
+	  case "desc":
+	  	sortOrder = "";
+		icon.removeClass("fa-sort-desc");
+		icon.addClass("fa-sort");	
+        break;
+      default:
+		sortOrder = "asc";
+		icon.removeClass("fa-sort");
+		icon.addClass("fa-sort-asc");
+    }
+	
+	sortTable($(".which-mesh"), sortOrder);
+
+  })
+  
 });
